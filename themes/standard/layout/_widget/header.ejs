@@ -1,0 +1,30 @@
+<%
+  var sitemap = GetSitemap();
+%>
+<header>
+  <div class="grid">
+    <a class="logo" href="<%- domain %>">
+      <img border="0" src="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+    </a>
+    <div class="trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="menu">
+      <% sitemap.items.forEach(function (primary) { %>
+        <li>
+          <div class="menu__trigger"><%- primary.name %></div>
+          <ul class="menu__secondary">
+            <% primary.items.forEach(function (secondary) { %>
+              <li>
+                <a href="<%- domain %><%- primary.link %>/<%- secondary.link %>"><%- secondary.name %></a>
+              </li>
+            <% }) %>
+          </ul>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</header>

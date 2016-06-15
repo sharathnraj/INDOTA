@@ -1,0 +1,20 @@
+<%
+  var labelInNav;
+  var heroes = GetHeroes();
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+  }
+%>
+<section class="stats box--white text--grayscale-18" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <div class="stats__heroes">
+      <% heroes.forEach(function (hero) { %>
+        <div class="stats__heroes__hero">
+          <%- hero.localized_name %><br>
+          <img src="http://cdn.dota2.com/apps/dota2/images/heroes/<%- hero.name.slice(14) %>_vert.jpg" alt="<%- hero.localized_name %>" title="<%- hero.localized_name %>">
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

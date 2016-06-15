@@ -1,0 +1,49 @@
+@import "bourbon/bourbon";
+
+$mqs: true !default;
+
+@import "global/mixins";
+@import "global/reset";
+@import "global/settings";
+@import "global/layout";
+@import "global/typography";
+@import "global/header";
+@import "global/footer";
+
+@import "components/stats";
+@import "components/news";
+
+table {
+  border: 1px solid;
+  border-spacing: 0;
+
+
+  tr {
+    td {
+      border-bottom: 1px solid;
+      border-right: 1px solid;
+      padding: 5px;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  thead {
+    font-weight: bold;
+
+    tr,
+    tr:last-child {
+      td {
+        border-bottom: 2px solid;
+      }
+    }
+  }
+}

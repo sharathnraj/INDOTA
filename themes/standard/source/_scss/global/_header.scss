@@ -1,0 +1,170 @@
+header {
+  @include linear-gradient(#010101, #171717);
+  border-bottom: 1px solid #31302e;
+  padding: 14px 0;
+
+  .grid {
+    @include clearfix();
+  }
+
+  .logo {
+    float: left;
+
+    img {
+      display: block;
+    }
+  }
+
+  .trigger {
+    cursor: pointer;
+    float: right;
+    height: 21px;
+    margin: 6px auto;
+    position: relative;
+    width: 30px;
+    @include transform(rotate(0deg));
+    @include transition(0.2s ease-in-out);
+
+    span {
+      background: $grey;
+      display: block;
+      height: 3px;
+      left: 0;
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      @include transform(rotate(0deg));
+      @include transition(0.2s ease-in-out);
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 9px;
+      }
+
+      &:nth-child(4) {
+        top: 18px;
+      }
+
+    }
+
+    &:hover {
+      span {
+        background: $white;
+      }
+    }
+
+    &.open {
+      & + ul {
+        display: block;
+        margin: 62px -15px 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+      }
+
+      span {
+        &:nth-child(1) {
+          left: 50%;
+          top: 18px;
+          width: 0%;
+        }
+
+        &:nth-child(2) {
+          @include transform(rotate(45deg));
+        }
+
+        &:nth-child(3) {
+          @include transform(rotate(-45deg));
+        }
+
+        &:nth-child(4) {
+          left: 50%;
+          top: 18px;
+          width: 0%;
+        }
+      }
+    }
+  }
+
+  .menu {
+    @include linear-gradient(#010101, #171717);
+    display: none;
+    z-index: 9;
+
+    li {
+      position: relative;
+    }
+
+    a,
+    .menu__trigger {
+      color: $grey;
+      cursor: pointer;
+      display: block;
+      padding: 7px 15px;
+      text-transform: uppercase;
+      @include transition(color 0.2s);
+
+      &:hover {
+        color: $white;
+      }
+
+    }
+
+    &__secondary {
+      font-size: 14px;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      text-align: center;
+      width: 100%;
+      z-index: -1;
+      @include transition(opacity 0.2s);
+
+      &.open {
+        height: auto;
+        opacity: 1;
+        z-index: 9;
+      }
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  @include bp($breakpoint-medium) {
+    .trigger {
+      display: none;
+    }
+
+    .menu,
+    .trigger + ul,
+    .trigger.open + ul {
+      display: block;
+      float: left;
+      margin: 0 30px;
+      position: relative;
+      width: auto;
+
+      li {
+        display: inline-block;
+      }
+
+      &__secondary {
+        position: absolute;
+        text-align: left;
+        width: 200px;
+
+        &.open {
+          border: 1px solid #31302e;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}

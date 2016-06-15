@@ -1,0 +1,163 @@
+/*------------------------------------*\
+    #BREAKPOINTS SIZES
+\*------------------------------------*/
+$breakpoint-xsmall: 320px !default;  //
+$breakpoint-small: 480px !default; //
+$breakpoint-medium: 768px !default; //
+$breakpoint-large: 960px !default;  //
+$breakpoint-xlarge: 1280px !default; //
+
+/// Legacy breakpoint `1164px`
+/// @access public
+/// @group breakpoints
+/// @type Breakpoint
+$exclude-legacy-breakpoint-size: $breakpoint-xlarge;
+
+/*------------------------------------*\
+    #Colours
+\*------------------------------------*/
+/// White
+/// @group colours
+/// @type Variable
+$white: #ffffff;
+/// Grayscale 4
+/// @group colours
+/// @type Variable
+$grayscale-4: #0b0b0b;
+/// Grayscale 7
+/// @group colours
+/// @type Variable
+$grayscale-7: #111111;
+/// Black
+/// @group colours
+/// @type Variable
+$black: #000000;
+
+$grey: #908d8b;
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+
+$screen-xsmall: (
+    base-font-size:                 16px,
+    base-line-height:               22px,
+    base-leader:                    30px,
+    base-gutter:                    16px,
+    base-intro-font-size:           16px,
+    base-intro-line-height:         23px,
+    base-intro-leader:              10px,
+    base-sub-font-size:             12px,
+    base-sub-line-height:           22px,
+    base-sub-leader:                20px,
+    base-spacer-small:              20px,
+    base-spacer-medium:             30px,
+    base-spacer-large:              30px,
+    base-section-spacer-small:      10px,
+    base-section-spacer-large:      30px
+);
+
+$screen-small: map-merge($screen-xsmall, (
+    base-gutter:        26px,
+));
+
+$screen-medium: map-merge($screen-small, (
+    base-gutter:                    38px,
+    base-intro-line-height:         26px,
+    base-intro-leader:              12px,
+    base-spacer-large:              40px,
+    base-section-spacer-small:      20px,
+    base-section-spacer-large:      40px
+
+));
+
+$screen-large: map-merge($screen-medium, (
+    base-gutter:                    40px,
+    base-intro-line-height:         24px,
+    base-sub-leader:                24px,
+    base-spacer-large:              60px
+));
+
+$screen-xlarge: map-merge($screen-large, (
+    base-intro-line-height: 26px,
+));
+
+/*------------------------------------*\
+    #FONT-SIZES
+\*------------------------------------*/
+
+/*
+Font-sizes (in pixels). Refer to relevant sections for their implementations.
+*/
+
+/*
+    x-small
+*/
+$font-xsmall: (
+    h1:                     30px, // .alpha
+    h1-line-height:         30px,
+    h1-letter-spacing:      -25,  // -0.8px
+    h2:                     24px, // .beta
+    h2-line-height:         28px,
+    h2-letter-spacing:      -20,  // -0.4px
+    h3:                     22px, // .gamma
+    h3-line-height:         26px,
+    h3-letter-spacing:      -20,  // -0.4px
+    h4:                     20px, // .delta
+    h4-line-height:         24px,
+    h4-letter-spacing:      -20,  // -0.4px
+    h5:                     18px, // .epsilon
+    h5-line-height:         24px,
+    h5-letter-spacing:      -10,  // normal
+    h6:                     16px, // .zeta
+    h6-line-height:         22px,
+    h6-letter-spacing:      -10   // normal
+);
+$screen-xsmall: map-merge($font-xsmall, $screen-xsmall);
+
+
+/*
+    small
+*/
+$font-small: $font-xsmall;
+$screen-small: map-merge($font-small, $screen-small);
+
+
+/*
+    medium
+*/
+$font-medium: map-merge($font-small, (
+    h1:                     40px, // .alpha
+    h1-line-height:         40px,
+    h1-letter-spacing:      -25,  // -0.8px
+    h2:                     30px, // .beta
+    h2-line-height:         30px,
+    h2-letter-spacing:      -20,  // -0.4px
+    h3:                     24px, // .gamma
+    h3-line-height:         28px,
+    h3-letter-spacing:      -20,  // -0.4px
+    h4:                     20px, // .delta
+    h4-line-height:         24px,
+    h4-letter-spacing:      -20,  // -0.4px
+    h5:                     18px, // .epsilon
+    h5-line-height:         24px,
+    h5-letter-spacing:      -10,  // 0px / normal
+    h6:                     16px, // .zeta
+    h6-line-height:         22px,
+    h6-letter-spacing:      -10   // 0px / normal
+));
+$screen-medium: map-merge($font-medium, $screen-medium);
+
+
+/*
+    large
+*/
+$font-large: $font-medium;
+$screen-large: map-merge($font-large, $screen-large);
+
+
+/*
+    x-large
+*/
+$font-xlarge:$font-large;
+$screen-xlarge: map-merge($font-xlarge, $screen-xlarge);

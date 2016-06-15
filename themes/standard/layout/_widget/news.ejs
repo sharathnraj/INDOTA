@@ -1,0 +1,25 @@
+<%
+  var labelInNav;
+  var DOTANews = GetDOTANews();
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+      bgColour = settings.bgColour;
+      heading = settings.heading;
+      description = settings.description;
+  }
+%>
+<section class="news box--<%- bgColour %>" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <h2><%- heading %></h2>
+    <p><%- description %></p>
+    <div class="news__items">
+      <% DOTANews.forEach(function (item) { %>
+        <div class="news__items__item">
+          <h3><%- item.title %><h3>
+          <p><%- item.description %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

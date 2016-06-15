@@ -1,0 +1,20 @@
+<%
+  var labelInNav;
+  var items = GetGameItems();
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+  }
+%>
+<section class="stats box--white text--grayscale-18" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <div class="stats__items">
+      <% items.forEach(function (item) { %>
+        <div class="stats__items__item">
+          <%- item.localized_name %><br>
+          <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- item.name.slice(5) %>_lg.png" alt="<%- item.localized_name %>" title="<%- item.localized_name %>">
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

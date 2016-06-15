@@ -1,0 +1,193 @@
+<%
+  var labelInNav;
+  var match = GetMatchDetails(),
+      heroes = GetHeroes(),
+      items = GetGameItems(),
+      lobby = GetLobbyType(),
+      towers = GetTowerStatus(),
+      barracks = GetBarracksStatus(),
+      mode = GetGameMode(),
+      leaver = GetLeaverStatus();
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+  }
+%>
+<section class="stats box--white text--grayscale-18" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <h1>STATS</h1>
+    <div class="stats__detail" id="<%- match.match_id %>">
+      <!-- <h2>Match Detail</h2>
+      <p>Victory: <b><%- match.radiant_win ? 'Radiant' : 'Dire' %></b></p>
+      <p>Duration: <b><%- parseFloat(match.duration / 60).toFixed(2) %> mins</b></p>
+      <p>Start time: <b><%- (new Date(match.start_time*1000)).toLocaleDateString() %> at <%- (new Date(match.start_time*1000)).toLocaleTimeString() %></b></p>
+      <p>Match ID: <b><%- match.match_id %></b></p>
+      <p>Match Seq Num: <b><%- match.match_seq_num %></b></p>
+      <p>Radiant team towers status:
+        <% for (var i = 0; i < 11; i++) { %>
+          <% var status = parseInt(toBinary(match.tower_status_radiant, 11).charAt(i)); %>
+          <% var destroyedTower = towers.filter(function (tower) {
+            return (tower.id === i);
+          })[0] %>
+          <br>
+          <%- !!destroyedTower && destroyedTower.name %>: <b><%- status ? 'Standing': 'Destroyed' %></b>
+        <% } %>
+      </p>
+      <p>Dire team towers status:
+        <% for (var i = 0; i < 11; i++) { %>
+          <% var status = parseInt(toBinary(match.tower_status_dire, 11).charAt(i)); %>
+          <% var destroyedTower = towers.filter(function (tower) {
+            return (tower.id === i);
+          })[0] %>
+          <br>
+          <%- !!destroyedTower && destroyedTower.name %>: <b><%- status ? 'Standing': 'Destroyed' %></b>
+        <% } %>
+      </p>
+      <p>Radiant team barracks status:
+        <% for (var i = 0; i < 6; i++) { %>
+          <% var status = parseInt(toBinary(match.barracks_status_radiant, 6).charAt(i)); %>
+          <% var destroyedBarrack = barracks.filter(function (barrack) {
+            return (barrack.id === i);
+          })[0] %>
+          <br>
+          <%- !!destroyedBarrack && destroyedBarrack.name %>: <b><%- status ? 'Standing': 'Destroyed' %></b>
+        <% } %>
+      </p>
+      <p>Dire team barracks status:
+        <% for (var i = 0; i < 6; i++) { %>
+          <% var status = parseInt(toBinary(match.barracks_status_dire, 6).charAt(i)); %>
+          <% var destroyedBarrack = barracks.filter(function (barrack) {
+            return (barrack.id === i);
+          })[0] %>
+          <br>
+          <%- !!destroyedBarrack && destroyedBarrack.name %>: <b><%- status ? 'Standing': 'Destroyed' %></b>
+        <% } %>
+      </p>
+      <p>Server Cluster: <b><%- match.cluster %></b></p>
+      <p>First blood time (in secs): <b><%- match.first_blood_time %></b></p>
+      <p>Lobby Type: <b>
+        <% var lobbyType = lobby.filter(function (lob) {
+            return (lob.id === match.lobby_type);
+        })[0] %>
+        <%- !!lobbyType && lobbyType.type %></b>
+      </p>
+      <p>No. of human players: <b><%- match.human_players %></b></p>
+      <p>League ID: <b><%- match.leagueid %></b></p>
+      <p>No. of positive votes: <b><%- match.positive_votes %></b></p>
+      <p>No. of negative votes: <b><%- match.negative_votes %></b></p>
+      <p>Game mode: <b>
+        <% var gameMode = mode.filter(function (mod) {
+            return (mod.id === match.game_mode);
+        })[0] %>
+        <%- !!gameMode && gameMode.type %></b>
+      </p>
+      <p>Flags: <b><%- match.flags %></b></p>
+      <p>Engine: <b>Source <%- match.engine + 1 %></b></p>
+      <p>Radiant score: <b><%- match.radiant_score %></b></p>
+      <p>Dire score: <b><%- match.dire_score %></b></p>
+      <table>
+        <thead>
+          <tr>
+            <td>Account ID</td>
+            <td>Player Slot</td>
+            <td>Hero</td>
+            <td>Items</td>
+            <td>Kills</td>
+            <td>Deaths</td>
+            <td>Assists</td>
+            <td>Leaver Status</td>
+            <td>Last hits</td>
+            <td>Denies</td>
+            <td>Gold per min</td>
+            <td>XP per min</td>
+            <td>Level</td>
+            <td>Gold</td>
+            <td>Gold Spent</td>
+            <td>Hero Damage</td>
+            <td>Tower Damage</td>
+            <td>Hero healing</td>
+            <td>Abilities</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% match.players.forEach(function (player) { %>
+            <tr>
+              <td><%- player.account_id %></td>
+              <td><%- player.player_slot %></td>
+              <td>
+                <% var hero = heroes.filter(function (hero) {
+                    return (hero.id === player.hero_id);
+                })[0] %>
+                <img src="http://cdn.dota2.com/apps/dota2/images/heroes/<%- hero.name.slice(14) %>_lg.png" alt="<%- hero.localized_name %>" title="<%- hero.localized_name %>">
+              </td>
+              <td>
+                <% if (player.item_0) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_0);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>"><br>
+                <% } %>
+                <% if (player.item_1) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_1);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>"><br>
+                <% } %>
+                <% if (player.item_2) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_2);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>"><br>
+                <% } %>
+                <% if (player.item_3) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_3);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>"><br>
+                <% } %>
+                <% if (player.item_4) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_4);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>"><br>
+                <% } %>
+                <% if (player.item_5) { %>
+                  <% var itemName = items.filter(function (item) {
+                      return (item.id === player.item_5);
+                  })[0] %>
+                  <img src="http://cdn.dota2.com/apps/dota2/images/items/<%- itemName.name.slice(5) %>_lg.png" alt="<%- itemName.localized_name %>" title="<%- itemName.localized_name %>">
+                <% } %>
+              </td>
+              <td><%- player.kills %></td>
+              <td><%- player.deaths %></td>
+              <td><%- player.assists %></td>
+              <td>
+                <% var leaverStatus = leaver.filter(function (leave) {
+                    return (leave.id === player.leaver_status);
+                })[0] %>
+                <%- !!leaverStatus && leaverStatus.name %>
+              </td>
+              <td><%- player.last_hits %></td>
+              <td><%- player.denies %></td>
+              <td><%- player.gold_per_min %></td>
+              <td><%- player.xp_per_min %></td>
+              <td><%- player.level %></td>
+              <td><%- player.gold %></td>
+              <td><%- player.gold_spent %></td>
+              <td><%- player.hero_damage %></td>
+              <td><%- player.tower_damage %></td>
+              <td><%- player.hero_healing %></td>
+              <td>
+                <% player.ability_upgrades.forEach(function (upgrade) { %>
+                  <p>Ability: <%- upgrade.ability %><br>
+                  Time: <%- upgrade.time %><br>
+                  level: <%- upgrade.level %></p>
+                <% }) %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table> -->
+    </div>
+  </div>
+</section>

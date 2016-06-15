@@ -1,0 +1,32 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin bp($point) {
+  @if ($mqs == false) {
+    @if ($point != $exclude-legacy-breakpoint-size) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $point) {
+      @content;
+    }
+  }
+}
+
+@mixin set-font-size($to-size, $line-height, $letter-spacing: 0) {
+    font-size: $to-size;
+    line-height: $line-height;
+    @if $letter-spacing{
+        letter-spacing: photoshop-letterspacing-to-ems($letter-spacing);
+    }
+}
+
+@function photoshop-letterspacing-to-ems($value) {
+  @return ($value / 1000) * 1em;
+}

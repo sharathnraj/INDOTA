@@ -1,0 +1,40 @@
+.grid {
+  margin: 0 auto;
+  max-width: $breakpoint-xlarge;
+  padding: 0 14px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $black;
+  color: $white;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+section {
+  padding: 30px 0;
+  position: relative;
+
+  @media screen and (min-width: $breakpoint-small) {
+    padding: 50px 0;
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    padding: 70px 0;
+  }
+}
+
+.box {
+  &--grayscale-7 {
+    background: $grayscale-7;
+  }
+}

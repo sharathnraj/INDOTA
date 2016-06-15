@@ -1,0 +1,44 @@
+{
+  "result": [
+    {
+      "id": -1,
+      "type": "Invalid"
+    },
+    {
+      "id": 0,
+      "type": "Public matchmaking"
+    },
+    {
+      "id": 1,
+      "type": "Practise"
+    },
+    {
+      "id": 2,
+      "type": "Tournament"
+    },
+    {
+      "id": 3,
+      "type": "Tutorial"
+    },
+    {
+      "id": 4,
+      "type": "Co-op with bots."
+    },
+    {
+      "id": 5,
+      "type": "Team match"
+    },
+    {
+      "id": 6,
+      "type": "Solo Queue"
+    },
+    {
+      "id": 7,
+      "type": "Ranked Matchmaking"
+    },
+    {
+      "id": 8,
+      "type": "1v1 Solo Mid"
+    }
+  ]
+}

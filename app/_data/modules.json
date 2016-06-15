@@ -1,0 +1,29 @@
+[
+  {
+    "id": "header"
+  },
+  {
+    "id": "intro"
+  },
+  {
+    "id": "news"
+  },
+  {
+    "id": "chat"
+  },
+  {
+    "id": "footer"
+  },
+  {
+    "id": "matchDetails"
+  },
+  {
+    "id": "heroes"
+  },
+  {
+    "id": "items"
+  },
+  {
+    "id": "matchHistory"
+  }
+]

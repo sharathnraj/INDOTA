@@ -1,0 +1,66 @@
+<%
+  var labelInNav;
+  var history = GetMatchHistory(),
+      heroes = GetHeroes(),
+      lobby = GetLobbyType();
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+  }
+%>
+<section class="stats box--white text--grayscale-18" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <h1>STATS</h1>
+    <div class="stats__history">
+      <h2>Match History</h2>
+      <p>Number of matches : <b><%- history.num_results %></b></p>
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Sequence</td>
+            <td>Start time</td>
+            <td>Lobby Type</td>
+            <td>Radiant team</td>
+            <td>Dire team</td>
+            <td>Radiant team players</td>
+            <td>Dire team players</td>
+          </tr>
+        </thead>
+        <tbody>
+        <% history.matches.forEach(function (match) { %>
+          <tr>
+            <td><%- match.match_id %></td>
+            <td><%- match.match_seq_num %></td>
+            <td><%- (new Date(match.start_time*1000)).toLocaleDateString() %> at <%- (new Date(match.start_time*1000)).toLocaleTimeString() %></td>
+            <td><% var lobbyType = lobby.filter(function (lob) {
+                    return (lob.id === match.lobby_type);
+                })[0] %>
+                <%- !!lobbyType && lobbyType.type %></td>
+            <td><%- match.radiant_team_id %></td>
+            <td><%- match.dire_team_id %></td>
+            <td>
+              <% for (var i = 0; i < match.players.length/2; i++) { %>
+                <%- match.players[i].account_id %>
+                <% var hero = heroes.filter(function (hero) {
+                    return (hero.id === match.players[i].hero_id);
+                })[0] %>
+                (<%- !!hero && hero.localized_name %>)<br>
+              <% } %>
+            </td>
+            <td>
+              <% for (var i = match.players.length/2; i < match.players.length; i++) { %>
+                <%- match.players[i].account_id %>
+                <% var hero = heroes.filter(function (hero) {
+                    return (hero.id === match.players[i].hero_id);
+                })[0] %>
+                (<%- !!hero && hero.localized_name %>)<br>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

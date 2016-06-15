@@ -1,0 +1,68 @@
+{
+  "result": [
+    {
+      "id": 0,
+      "type": "None"
+    },
+    {
+      "id": 1,
+      "type": "All Pick"
+    },
+    {
+      "id": 2,
+      "type": "Captain's Mode"
+    },
+    {
+      "id": 3,
+      "type": "Random Draft"
+    },
+    {
+      "id": 4,
+      "type": "Single Draft"
+    },
+    {
+      "id": 5,
+      "type": "All Random"
+    },
+    {
+      "id": 6,
+      "type": "Intro"
+    },
+    {
+      "id": 7,
+      "type": "Diretide"
+    },
+    {
+      "id": 8,
+      "type": "Reverse Captain's Mode"
+    },
+    {
+      "id": 9,
+      "type": "The Greeviling"
+    },
+    {
+      "id": 10,
+      "type": "Tutorial"
+    },
+    {
+      "id": 11,
+      "type": "Mid Only"
+    },
+    {
+      "id": 12,
+      "type": "Least Played"
+    },
+    {
+      "id": 13,
+      "type": "New Player Pool"
+    },
+    {
+      "id": 14,
+      "type": "Compendium Matchmaking"
+    },
+    {
+      "id": 16,
+      "type": "Captains Draft"
+    }
+  ]
+}

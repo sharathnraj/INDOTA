@@ -1,0 +1,15 @@
+<%
+  var labelInNav;
+
+  if (settings) {
+      labelInNav = settings.labelInNav;
+      heading = settings.heading;
+      description = settings.description;
+  }
+%>
+<section class="intro box--white text--grayscale-18" id="<%= toCamelCase(labelInNav) %>">
+  <div class="grid">
+    <h1><%- heading %></h1>
+    <p><%- description %></p>
+  </div>
+</section>

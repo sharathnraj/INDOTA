@@ -1,0 +1,28 @@
+{
+  "result": [
+    {
+      "id": 0,
+      "name": "Bottom Ranged"
+    },
+    {
+      "id": 1,
+      "name": "Bottom Melee"
+    },
+    {
+      "id": 2,
+      "name": "Middle Ranged"
+    },
+    {
+      "id": 3,
+      "name": "Middle Melee"
+    },
+    {
+      "id": 4,
+      "name": "Top Ranged"
+    },
+    {
+      "id": 5,
+      "name": "Top Melee"
+    }
+  ]
+}

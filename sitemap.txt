@@ -1,0 +1,63 @@
+Home
+--  My account
+    --  Login / Signup
+    --  Account info (pwd etc.)
+    --  Personal stats
+        --  Graphs (comparision ?)
+    --  Team
+    --  Messages
+--  League
+    --  Tournaments
+    --  Leaderboards
+    --  Live games
+    --  Rules
+    --  Support
+--  Events
+    --  Upcoming events
+    --  Past events
+    --  Schedule
+    --  Meetups
+--  Stats
+    --  Public matches
+    --  Match details
+    --  DOTA Heroes
+    --  DOTA Items
+    --  Region / Country / International
+--  DOTA 2
+    --  How to play
+    --  Tips & Tricks
+    --  Achievements
+    --  Videos
+        --  Top 5
+        --  Learn
+        --  Latest highlights
+    --  Game updates (patch notes)
+    --  Guest blog
+    --  Exclusive content
+--  Social
+--  News
+    --  News about our league
+    --  DOTA news
+--  Forum
+    --  General forum
+    --  Chat / message
+--  Store
+    --  Hardware
+    --  Merchandise
+    --  Offers
+    --  Prizes
+--  Support
+    --  General support
+    --  Match support
+    --  FAQs
+    --  Mailing list
+    --  Subscriptions
+    --  Search
+    --  Translate
+--  About us
+    --  What are we ?
+    --  Executive team
+    --  Contact us
+    --  Careers
+    --  Terms of use
+    --  Privacy policy

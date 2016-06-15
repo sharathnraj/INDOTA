@@ -1,0 +1,84 @@
+{
+  "name": "Home",
+  "link": "/",
+  "items": [
+    {
+      "name": "Stats",
+      "link": "stats",
+      "items": [
+        {
+          "name": "Public matches",
+          "link": "public-matches"
+        },
+        {
+          "name": "Match details",
+          "link": "match-details"
+        },
+        {
+          "name": "DOTA Heroes",
+          "link": "heroes"
+        },
+        {
+          "name": "DOTA Items",
+          "link": "items"
+        }
+      ]
+    },
+    {
+      "name": "DOTA 2",
+      "link": "dota",
+      "items": [
+        {
+          "name": "How to play",
+          "link": "how-to-play"
+        },
+        {
+          "name": "Tips & Tricks",
+          "link": "tips-and-tricks"
+        },
+        {
+          "name": "Videos",
+          "link": "videos"
+        }
+      ]
+    },
+    {
+      "name": "Forum",
+      "link": "forum",
+      "items": [
+        {
+          "name": "Chat",
+          "link": "chat"
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "link": "news",
+      "items": [
+        {
+          "name": "League news",
+          "link": "league"
+        },
+        {
+          "name": "DOTA news",
+          "link": "dota"
+        }
+      ]
+    },
+    {
+      "name": "About Us",
+      "link": "about-us",
+      "items": [
+        {
+          "name": "Privacy policy",
+          "link": "privacy-policy"
+        },
+        {
+          "name": "Terms & Conditions",
+          "link": "terms-and-conditions"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "response": {
+    "players": [
+      {
+        "steamid": "76561198218308915",
+        "communityvisibilitystate": 3,
+        "profilestate": 1,
+        "personaname": "sharathnraj",
+        "lastlogoff": 1463324260,
+        "profileurl": "http://steamcommunity.com/id/sharathnraj/",
+        "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb8c8b265330a1c84be97191aae4a3dc02a60e95.jpg",
+        "avatarmedium": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb8c8b265330a1c84be97191aae4a3dc02a60e95_medium.jpg",
+        "avatarfull": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb8c8b265330a1c84be97191aae4a3dc02a60e95_full.jpg",
+        "personastate": 0,
+        "realname": "Sharath Nagaraj",
+        "primaryclanid": "103582791429521408",
+        "timecreated": 1442319811,
+        "personastateflags": 0,
+        "loccountrycode": "AU",
+        "locstatecode": "VIC",
+        "loccityid": 4990
+      }
+    ]
+  }
+}

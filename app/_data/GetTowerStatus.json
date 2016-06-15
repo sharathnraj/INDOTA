@@ -1,0 +1,48 @@
+{
+  "result": [
+    {
+      "id": 0,
+      "name": "Ancient Bottom"
+    },
+    {
+      "id": 1,
+      "name": "Ancient Top"
+    },
+    {
+      "id": 2,
+      "name": "Bottom Tier 3"
+    },
+    {
+      "id": 3,
+      "name": "Bottom Tier 2"
+    },
+    {
+      "id": 4,
+      "name": "Bottom Tier 1"
+    },
+    {
+      "id": 5,
+      "name": "Middle Tier 3"
+    },
+    {
+      "id": 6,
+      "name": "Middle Tier 2"
+    },
+    {
+      "id": 7,
+      "name": "Middle Tier 1"
+    },
+    {
+      "id": 8,
+      "name": "Top Tier 3"
+    },
+    {
+      "id": 9,
+      "name": "Top Tier 2"
+    },
+    {
+      "id": 10,
+      "name": "Top Tier 1"
+    }
+  ]
+}

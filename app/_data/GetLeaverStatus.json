@@ -1,0 +1,32 @@
+{
+  "result": [
+    {
+      "id": 0,
+      "name": "Finished match, No abandon"
+    },
+    {
+      "id": 1,
+      "name": "Player disconnected, No abandon"
+    },
+    {
+      "id": 2,
+      "name": "Player disconnected > 5 mins, Abandoned"
+    },
+    {
+      "id": 3,
+      "name": "Player Disconnected, Cliked leave, Abandoned"
+    },
+    {
+      "id": 4,
+      "name": "Player AFK, Abandoned"
+    },
+    {
+      "id": 5,
+      "name": "Player never connected, No abandon"
+    },
+    {
+      "id": 6,
+      "name": "Player took too long to connect, No abandon"
+    }
+  ]
+}

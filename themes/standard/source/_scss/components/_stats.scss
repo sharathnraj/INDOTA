@@ -1,0 +1,9 @@
+.stats {
+  &__heroes {
+    @include column-count(3);
+  }
+
+  &__items {
+    @include column-count(4);
+  }
+}

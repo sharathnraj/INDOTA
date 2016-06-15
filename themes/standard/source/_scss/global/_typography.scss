@@ -1,0 +1,89 @@
+h1,
+.alpha {
+    @include set-font-size(map-get($screen-xsmall, h1), map-get($screen-xsmall, h1-line-height), map-get($screen-xsmall, h1-letter-spacing));
+    margin-bottom: 30px;
+
+    @include bp($breakpoint-large) {
+        letter-spacing: photoshop-letterspacing-to-ems(-20);
+        @include set-font-size(map-get($screen-large, h1), map-get($screen-large, h1-line-height), map-get($screen-large, h1-letter-spacing));
+    }
+
+}
+
+h2,
+.beta {
+
+    @include set-font-size(map-get($screen-xsmall, h2), map-get($screen-xsmall, h2-line-height), map-get($screen-xsmall, h2-letter-spacing));
+    margin-bottom: 30px;
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, h2), map-get($screen-large, h2-line-height), map-get($screen-large, h2-letter-spacing));
+    }
+}
+
+h3,
+.gamma {
+
+    @include set-font-size(map-get($screen-xsmall, h3), map-get($screen-xsmall, h3-line-height), map-get($screen-xsmall, h3-letter-spacing));
+    margin-bottom: 20px;
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, h3), map-get($screen-large, h3-line-height), map-get($screen-large, h3-letter-spacing));
+    }
+}
+
+h4,
+.delta {
+
+    @include set-font-size(map-get($screen-xsmall, h4), map-get($screen-xsmall, h4-line-height), map-get($screen-xsmall, h4-letter-spacing));
+    margin-bottom: 15px;
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, h4), map-get($screen-large, h4-line-height), map-get($screen-large, h4-letter-spacing));
+    }
+}
+
+h5,
+.epsilon {
+
+    @include set-font-size(map-get($screen-xsmall, h5), map-get($screen-xsmall, h5-line-height), map-get($screen-xsmall, h5-letter-spacing));
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, h5), map-get($screen-large, h5-line-height), map-get($screen-large, h5-letter-spacing));
+    }
+}
+
+h6,
+.zeta {
+
+    @include set-font-size(map-get($screen-xsmall, h6), map-get($screen-xsmall, h6-line-height), map-get($screen-xsmall, h6-letter-spacing));
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, h6), map-get($screen-large, h6-line-height), map-get($screen-large, h6-letter-spacing));
+    }
+}
+
+b {
+  font-weight: 700;
+}
+
+p {
+    margin-bottom: units(10px);
+
+    @include set-font-size(map-get($screen-xsmall, base-font-size), map-get($screen-xsmall, base-line-height));
+
+    @include bp($breakpoint-large) {
+        @include set-font-size(map-get($screen-large, base-font-size), map-get($screen-large, base-line-height));
+    }
+
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

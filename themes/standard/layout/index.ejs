@@ -1,0 +1,18 @@
+<!-- Header, common to all the pages -->
+<%- partial('_widget/header', {
+    domain: '/AD/'
+}) %>
+
+<!-- add all the modules from page YML here -->
+<% page.modules.forEach(function(module) { %>
+  <%- partial('_widget/' + module.id, {
+    id : module.id,
+    settings: module.settings,
+    domain: '/AD/'
+  })%>
+<% }) %>
+
+<!-- Footer, common to all the pages -->
+<%- partial('_widget/footer', {
+    domain: '/AD/'
+}) %>
